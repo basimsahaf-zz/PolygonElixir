@@ -19,6 +19,12 @@ defmodule PolygonWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/get_coordinates", PolygonWeb do
+    pipe_through :api
+
+    get "/", ApiController, :get_coordinates
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PolygonWeb do
   #   pipe_through :api
