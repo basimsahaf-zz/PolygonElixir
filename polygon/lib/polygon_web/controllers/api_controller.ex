@@ -5,6 +5,6 @@ defmodule PolygonWeb.ApiController do
 		coordinates = Polygon.Schema |> Polygon.Repo.all
 		conn
     	|> put_resp_content_type("application/json")
-    	|> send_resp(200, Poison.encode!(coordinates))
+    	|> send_resp(200, Poison.encode!(%{"coordinates" => coordinates}))
 	end
 end
