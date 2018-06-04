@@ -58,7 +58,7 @@ class RenderMarkers extends React.Component {
         </div>
       );
     } else {
-      return <div />;
+      return (<div></div>);
     }
   };
 }
