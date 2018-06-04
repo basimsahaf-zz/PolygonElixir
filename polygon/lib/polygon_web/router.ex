@@ -11,6 +11,7 @@ defmodule PolygonWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug
   end
 
   scope "/", PolygonWeb do
@@ -21,7 +22,6 @@ defmodule PolygonWeb.Router do
 
   scope "/get_coordinates", PolygonWeb do
     pipe_through :api
-
     get "/", ApiController, :get_coordinates
   end
 

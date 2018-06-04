@@ -5,9 +5,18 @@
 # is restricted to this project.
 use Mix.Config
 
+config :polygon, Polygon.Endpoint,
+  http: [
+    port: 4000,
+	protocol_options: [max_request_line_length: 8192, max_header_value_length: 8192]
+  ]
 # General application configuration
 config :polygon,
   ecto_repos: [Polygon.Repo]
+
+config :cors_plug,
+  max_age: 86400,
+  methods: ["GET", "POST"]
 
 # Configures the endpoint
 config :polygon, PolygonWeb.Endpoint,

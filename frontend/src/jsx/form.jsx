@@ -10,12 +10,12 @@ export const SearchForm = () => {
       <Searchbox/>
       <Input s={12} type='select' label="Business Type" defaultValue='1'>
       	{Constants.business_types.map(function(item, index){
-        	return (<option value={index + 1}>{item}</option>)
+        	return (<option key={index} value={index + 1}>{item}</option>)
       	})}
       </Input>
       <Input s={12} type='select' label="Monthly Rent Budget" defaultValue='1'>
       	{Constants.rental_budget_range.map(function(item, index){
-        	return (<option value={index + 1}>{item}</option>)
+        	return (<option key={index} value={index + 1}>{item}</option>)
       	})}
       </Input>
       <Input className ="radioButtons" name='group1' type='checkbox' value='true' label='In Downtown' defaultValue='checked' />
